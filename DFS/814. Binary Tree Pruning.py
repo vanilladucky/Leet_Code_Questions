@@ -4,21 +4,13 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-class Solution: # O(N)
+class Solution:
     def pruneTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         
-        def dfs(node):
-            if not node: # End Condition
-                return False
-            
-            left = dfs(node.left) # Operations start
-            right = dfs(node.right)
-            
-            if not left:
-                node.left = None
-            if not right:
-                node.right = None # Operations end
-                
-            return node.val or left or right # Call to Recursion
+        if not root: # Terminating Condition
+            return None
         
-        return root if dfs(root) else None
+        root.left = self.pruneTree(root.left) # Operations
+        root.right = self.pruneTree(root.right)
+        
+        return root if (root.val or root.left or root.right) else None # Call to recursion
