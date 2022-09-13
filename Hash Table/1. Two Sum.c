@@ -34,8 +34,8 @@ void hash_table_insert(int v, int i)
 {
     int index = hash_function(v);
 	
-	hash *node = new_node(v, i);
-	node->next = hash_table[index];
+    hash *node = new_node(v, i);
+    node->next = hash_table[index];
     hash_table[index] = node;
 
 }
