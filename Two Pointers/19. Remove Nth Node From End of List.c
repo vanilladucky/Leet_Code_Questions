@@ -6,7 +6,7 @@
  * };
  */
 struct ListNode* removeNthFromEnd(struct ListNode* head, int n){
-    struct ListNode *dummy = (struct ListNode*)malloc(sizeof(struct ListNode)*100);
+    struct ListNode *dummy = (struct ListNode*)malloc(sizeof(struct ListNode)*30);
     dummy->next = head;
     struct ListNode *ptr1 = dummy;
     struct ListNode *ptr2 = dummy;
