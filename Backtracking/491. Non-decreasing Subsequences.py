@@ -6,7 +6,8 @@ class Solution:
         def backtrack(idx):
             if idx == len(nums):
                 if len(subseq) >= 2:
-                    res.add(subseq)
+                    res.add(tuple(subseq))
+                return 
             if not subseq or subseq[-1] <= nums[idx]:
                 subseq.append(nums[idx])
                 backtrack(idx+1)
