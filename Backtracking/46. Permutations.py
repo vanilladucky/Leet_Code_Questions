@@ -4,7 +4,7 @@ class Solution:
 
         # base case
         if len(nums) == 1:
-            return [nums[:]]  # nums[:] is a deep copy
+            return [nums.copy()]
 
         for i in range(len(nums)):
             n = nums.pop(0)
